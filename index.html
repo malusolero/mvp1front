@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOC - organizador de armário</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>KCO - organização de armários</h1>
+        <p>Bem vindo ao organizador de armários, aqui você poderá gerir os armários e items que estão dentro deles.</p>
+    </header>
+
+    <section class="select-cabinet">
+        <h2 style="font-weight: 400;">Selecione o armário para gerir seu conteúdo</h2>
+
+        <select onchange="renderItemList(event)" name="cabinet-select" id="cabinet-select">
+            <option value="" selected disabled>Selecione um armário para começar</option>
+        </select>
+    </section>
+
+    <main class="content">
+        <div id="show-items" style="display: none;">
+            <section id="add-item-section" class="action-banner">
+                <div style="text-align: center; margin-bottom: 0.5rem">
+                    Cadastre um item no <span class="current-cabinet"></span>
+                </div>
+                <button id="show-add-item-btn">Cadastrar item</button>
+            </section>
+            <table id="items-list" >
+                    <tr>
+                        <th>Nome</th>
+                        <th>Marca</th>
+                        <th>Qtde.</th>
+                        <th>Peso</th>
+                        <th>Validade</th>
+                        <th>Tipo</th>
+                        <th>Ações</th>
+                    </tr>
+            </table>
+        </div>
+
+        <div id="add-item" style="display: none;">
+            <section id="show-items-section" class="action-banner">
+                <div style="text-align: center; margin-bottom: 0.5rem">
+                    Ver os itens presentes no  <span class="current-cabinet"></span>
+                </div>
+                <button id="show-items-btn">Ver itens</button>
+            </section>
+            <section id="add-item-form">
+                <div class="input-wrapper">
+                    <label for="add-item-name">Nome</label>
+                    <input id="add-item-name" type="text" placeholder="Digite o nome do item" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="add-item-brand">Marca</label>
+                    <input id="add-item-brand" type="text" placeholder="Digite a marca do item" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="add-item-amount">Quantidade</label>
+                    <input id="add-item-amount" type="number" min="0" max="100" placeholder="Ex: 3" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="add-item-weight">Peso</label>
+                    <input id="add-item-weight" type="text" placeholder="Ex: 1kg" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="add-item-expiry-date">Data de Validade</label>
+                    <input id="add-item-expiry-date" type="text" placeholder="10/11/2013" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="add-item-type">Tipo</label>
+                    <select id="add-item-type" name="item-type-select" id="item-type-select">
+                        <option value="" selected disabled>Selecione um armário para começar</option>
+                    </select>
+                </div>
+                <div class="input-wrapper">
+                    <button id="add-item-btn">Cadastrar item</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="scripts/type.js"></script>
+    <script src="scripts/cabinet.js"></script>
+    <script src="scripts/item.js"></script>
+    
+</body>
+</html>

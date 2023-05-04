@@ -1,0 +1,115 @@
+:root {
+    --main-bg: #F3F7F5;
+    --main-text: #121D12;
+    --main-dark-green: #646E68;
+    --main-shape: 6px;
+    --main-violet-grey: #8c7e8b;
+    --main-rose: #BAACBD;
+}
+
+*, body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-text);
+}
+
+body {
+    background-color: var(--main-bg);
+    padding: 1rem;
+}
+
+.header {
+    text-align: center;
+    margin: 1rem;
+}
+
+.select-cabinet {
+    text-align: center;
+    margin: 3rem 1rem;
+}
+
+select {
+    padding: 0.5rem;
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: var(--main-shape);
+    border-color: var(--main-dark-green);
+}
+
+select:focus-visible {
+    outline: 1px solid var(--main-violet-grey);
+}
+
+.item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--main-text);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.action-banner {
+    margin: 1rem auto 3rem;
+    background: white;
+    max-width: 200px;
+    padding: 2rem;
+    border-radius: var(--main-shape);
+    box-shadow: -1px 1px 10px 1px var(--main-dark-green);
+    text-align: center;
+}
+
+button {
+    background-color: var(--main-rose);
+    color: var(--main-text);
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--main-shape);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--main-violet-grey);
+    color: var(--main-bg);
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+    padding: 0 4rem;
+}
+
+.input-wrapper label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.input-wrapper input {
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--main-shape);
+    border: 1px solid var(--main-dark-green)
+}
+
+.action-btn {
+    padding: 0 0.5rem;
+    font-size: 1.25rem;
+    cursor: pointer; 
+}
+
+.action-btn:hover {
+    color: var(--main-violet-grey);
+
+}
