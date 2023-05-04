@@ -1,7 +1,19 @@
+/*
+ * constante que armazena a referência html
+ * para a seleção de tipos
+ */
 const typeSelect = document.getElementById('add-item-type');
+/*
+ * Constante global que armazena a URL da API
+ */
 const API_URL = 'http://127.0.0.1:5002';
+
 let types;
 
+/*
+ * requisição GET para o endpoint da API de busca
+ * de tipos na base de dados
+ */
 const getTypes = async () => {
     
 
@@ -18,6 +30,10 @@ const getTypes = async () => {
 
 }
 
+/*
+ * função para renderizar as opções da seleção
+ * de tipos, com os dados recebidos da API
+ */
 const renderTypeOptions = async () => {
     types = await getTypes();
 
@@ -34,4 +50,5 @@ const renderTypeOptions = async () => {
     })
 }
 
+// executa a lógica presente neste script
 renderTypeOptions();

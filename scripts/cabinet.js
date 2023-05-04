@@ -1,6 +1,13 @@
+/*
+ * constante global que armazena a referência html para a seleção
+ * do armário
+ */
 const cabinetSelect = document.querySelector('#cabinet-select');
 
-
+/*
+ * requisição GET para o endpoint da API de busca
+ * de armários na base de dados
+ */
 const getCabinets = async () => {
 
     const req = await fetch(`${API_URL}/cabinet`, { method: 'get'});
@@ -10,6 +17,10 @@ const getCabinets = async () => {
     return cabinets;
 }
 
+/*
+ * função para renderizar as opções da seleção
+ * de armários, com os dados recebidos da API
+ */
 const renderCabinetOptions = async () => {
     const cabinets = await getCabinets();
 
@@ -17,7 +28,6 @@ const renderCabinetOptions = async () => {
         alert('Não há armários cadastrados na base de dados!');
         return;
     }
-
 
     cabinets.map((cabinet) => {
         let opt = document.createElement('option');
@@ -27,4 +37,5 @@ const renderCabinetOptions = async () => {
     })
 }
 
+// executa a lógica presente neste script
 renderCabinetOptions();

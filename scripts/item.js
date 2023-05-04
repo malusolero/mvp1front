@@ -36,7 +36,6 @@ const renderItemList = async () => {
 }
 
 const refreshNewItem = () => {
-
     document.getElementById("add-item-name").value = '';
     document.getElementById("add-item-brand").value = '';
     document.getElementById("add-item-amount").value = '';
@@ -56,7 +55,6 @@ const insertItem = ({name, brand, amount, expiry_date, weight, type }) => {
     insertButtons(row.insertCell(-1));
     removeElement();
     editElement();
-    
 }
 
 const insertButtons = (parent) => {
